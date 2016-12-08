@@ -1,8 +1,6 @@
 package org.mvc.framework.helper;
 
 import org.mvc.framework.util.ReflectionUtil;
-import sun.jvm.hotspot.oops.ObjectHeap;
-
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -31,5 +29,9 @@ public final class BeanHelper {
             throw new RuntimeException("Can't find bean by class: " + cls);
         }
         return (T) BEAN_MAP.get(cls);
+    }
+
+    public static void setBean(Class<?> cls, Object obj) {
+        BEAN_MAP.put(cls, obj);
     }
 }
